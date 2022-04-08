@@ -1,0 +1,29 @@
+GET http://localhost:3000/api/todos HTTP/1.1
+
+##
+
+POST http://localhost:3000/api/todos HTTP/1.1
+Content-Type: application/json
+
+{
+    "title":"my todo title3"
+}
+
+##
+
+PATCH  http://localhost:3000/api/todos HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":"1",
+    "status":true
+}
+
+##
+
+DELETE http://localhost:3000/api/todos HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":"2"
+}
