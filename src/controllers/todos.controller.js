@@ -11,7 +11,7 @@ exports.getTodos = async (req, res, next) => {
 exports.addTodo = async (req, res) => {
     const { title } = req.body;
     if (!title) {
-        return res.status(400).json({ error: "title is required in the request body." })
+        return res.status(400).json({ error: "title is required in the request body and should not be empty." })
     }
 
     const { data, error } = await supabase.from("todos").insert({ title });
