@@ -10,10 +10,11 @@ exports.getTodos = async (req, res, next) => {
 
 exports.addTodo = async (req, res) => {
     const { title } = req.body;
-    const { data, error } = await supabase.from("todos").insert({ title });
     if (!title) {
         return res.status(400).json({ error: "title is required in the request body." })
     }
+
+    const { data, error } = await supabase.from("todos").insert({ title });
     if (error) {
         return res.status(500).json({ error: "Unable to add the todo to the database." })
     }
